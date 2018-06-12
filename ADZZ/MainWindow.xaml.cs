@@ -47,7 +47,7 @@ namespace ADZZ
         private void BtWydatkiPrzychody_Click(object sender, RoutedEventArgs e)
         {
             Rozliczenia przejscie = new Rozliczenia(); //Tworze instancje klasy WydatkiPrzychody aby przejsc do nowego okna
-            przejscie.ShowDialog();
+            //przejscie.ShowDialog();
 
         }
 
@@ -56,8 +56,22 @@ namespace ADZZ
             Statystyki przejscie = new Statystyki();    //Tworze instancje klasy Statystyki aby przejsc do nowego okna
             przejscie.ShowDialog();
         }
+
         #endregion
 
-        
+        private void BtDodajZwierze_Click(object sender, RoutedEventArgs e)
+        {
+            ramkaAkcji.Content = new FormularzDodaniaZwierzecia();
+        }
+
+        private void ramkaAkcji_Navigated(object sender, NavigationEventArgs e)
+        {
+            ramkaAkcji.NavigationService.RemoveBackEntry();
+        }
+
+        private void BtKalendarz_Click(object sender, RoutedEventArgs e)
+        {
+            ramkaAkcji.Content = new KalendarzRujowy();
+        }
     }
 }
